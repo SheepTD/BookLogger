@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "BookLogger",
-    "slug": "BookLogger",
+    "name": "Book-Logger",
+    "slug": "Book-Logger",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,15 +21,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sheeptd.BookLogger"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      
-        "expo-font"
-      
-    ]
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cc5d77c1-ae69-46f3-8baa-dc89ac92e82a"
+      }
+    }
   }
 }
