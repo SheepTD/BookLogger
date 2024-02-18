@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Alert } from "react";
 import { Pressable, Text } from "react-native";
 import NavBtnStyles from "../stylesheets/NavBtnStyles";
 import * as Clipboard from "expo-clipboard";
@@ -67,10 +67,24 @@ const ImportBtn = (props) => {
     }
   };
 
+  const openAlert = () =>
+    Alert.alert(
+      "Confirm Import",
+      "Are you sure that you want to import books from your clipboard?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        { text: "OK", onPress: () => fetchCopiedText() },
+      ]
+    );
+
   return (
     <Pressable
       style={NavBtnStyles.Pressable}
-      onPress={() => fetchCopiedText()}
+      onPress={() => openAlert()}
       android_ripple={{ color: ColorPalette.bg }}
     >
       <Text style={fontStyles.navBtn}>Import</Text>

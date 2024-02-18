@@ -1,4 +1,4 @@
-import { Pressable, Text } from "react-native";
+import { Pressable, Text, Alert } from "react-native";
 import NavBtnStyles from "../stylesheets/NavBtnStyles";
 import * as Clipboard from "expo-clipboard";
 import fontStyles from "../stylesheets/fontStyles";
@@ -13,10 +13,24 @@ const ExportAllBtn = (props) => {
     await Clipboard.setStringAsync(JSONBookArray);
   };
 
+  const openAlert = () =>
+    Alert.alert(
+      "Confirm Export All",
+      "Are you sure that you want to export all books to your clipboard?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        { text: "OK", onPress: () => copyToClipboard() },
+      ]
+    );
+
   return (
     <Pressable
       style={NavBtnStyles.Pressable}
-      onPress={() => copyToClipboard()}
+      onPress={() => openAlert}
       android_ripple={{ color: ColorPalette.bg }}
     >
       <Text style={fontStyles.navBtn}>Export All</Text>
