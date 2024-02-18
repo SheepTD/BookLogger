@@ -5,7 +5,7 @@
 // Fixed Layout and Styling - Wed 14 Feb 2024
 // Added Logs Page - Wed 14 Feb 2024
 // Uploaded to GitHub - Thu 15 Feb 2024
-// Final Bits and Pieces Finished
+// Final Bits and Pieces Finished - Sun 18 Feb 2024
 
 import { View, Text, StyleSheet, Linking, Pressable } from "react-native";
 import { useWindowDimensions } from "react-native";
@@ -89,7 +89,7 @@ const Logs = () => {
           Uploaded to GitHub - Thu 15 Feb 2024
         </Text>
         <Text style={[styles.text, fontStyles.text]}>
-          Final Bits and Pieces Finished -
+          Final Bits and Pieces Finished - Sun 18 Feb 2024
         </Text>
       </View>
       <View style={styles.view}>
