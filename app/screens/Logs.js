@@ -4,16 +4,43 @@
 // Added Sort Function - Sat 10 Feb 2024
 // Fixed Layout and Styling - Wed 14 Feb 2024
 // Added Logs Page - Wed 14 Feb 2024
+// Uploaded to GitHub - Thu 15 Feb 2024
 // Final Bits and Pieces Finished
-// Uploaded to the Play Store
 
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Linking, Pressable } from "react-native";
 import { useWindowDimensions } from "react-native";
 import ColorPalette from "../stylesheets/ColorPalette";
 import fontStyles from "../stylesheets/fontStyles";
 
 const Logs = () => {
   const { height, width } = useWindowDimensions();
+
+  const openGithubLink = async () => {
+    const url = "https://github.com/BitBoyTD/BookLogger";
+
+    // Check if the device supports deep linking
+    const supported = await Linking.canOpenURL(url);
+
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      console.error("Cannot open URL:", url);
+    }
+  };
+
+  const openEmailLink = async () => {
+    const email = "seanthedev123@gmail.com";
+    const url = `mailto:${email}`;
+
+    // Check if the device supports deep linking
+    const supported = await Linking.canOpenURL(url);
+
+    if (supported) {
+      await Linking.openURL(url);
+    } else {
+      console.error("Cannot open URL:", url);
+    }
+  };
 
   const styles = StyleSheet.create({
     text: {
@@ -59,10 +86,10 @@ const Logs = () => {
           Added Logs Page - Wed 14 Feb 2024
         </Text>
         <Text style={[styles.text, fontStyles.text]}>
-          Final Bits and Pieces Finished -
+          Uploaded to GitHub - Thu 15 Feb 2024
         </Text>
         <Text style={[styles.text, fontStyles.text]}>
-          Uploaded to the Play Store -
+          Final Bits and Pieces Finished -
         </Text>
       </View>
       <View style={styles.view}>
@@ -73,6 +100,14 @@ const Logs = () => {
       </View>
       <View style={styles.view}>
         <Text style={[styles.title, fontStyles.title]}>Links</Text>
+        <Pressable onPress={() => openGithubLink()}>
+          <Text style={[styles.text, fontStyles.link]}>GitHub</Text>
+        </Pressable>
+        <Pressable onPress={() => openEmailLink()}>
+          <Text style={[styles.text, fontStyles.link]}>
+            seanthedev123@gmail.com
+          </Text>
+        </Pressable>
       </View>
     </>
   );

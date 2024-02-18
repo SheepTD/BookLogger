@@ -30,7 +30,7 @@ const ExportAllBtn = (props) => {
   return (
     <Pressable
       style={NavBtnStyles.Pressable}
-      onPress={() => openAlert}
+      onPress={() => openAlert()}
       android_ripple={{ color: ColorPalette.bg }}
     >
       <Text style={fontStyles.navBtn}>Export All</Text>

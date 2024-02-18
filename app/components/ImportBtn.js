@@ -1,5 +1,5 @@
-import { useState, useEffect, Alert } from "react";
-import { Pressable, Text } from "react-native";
+import { useState, useEffect } from "react";
+import { Pressable, Text, Alert } from "react-native";
 import NavBtnStyles from "../stylesheets/NavBtnStyles";
 import * as Clipboard from "expo-clipboard";
 import fontStyles from "../stylesheets/fontStyles";

@@ -21,6 +21,11 @@ const fontStyles = StyleSheet.create({
     fontFamily: "Lora-Bold",
     fontSize: 18,
   },
+  link: {
+    color: ColorPalette.text,
+    fontFamily: "Lora-Italic",
+    textDecorationLine: "underline",
+  },
 });
 
 export default fontStyles;
