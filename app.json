@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Book-Logger",
+    "name": "BookLogger",
     "slug": "BookLogger",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.sheeptd.Book-Logger"
+      "package": "com.sheeptd.BookLogger"
     },
     "web": {
       "favicon": "./assets/favicon.png"
