@@ -1,4 +1,4 @@
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, StatusBar, View } from "react-native";
 import Bookshelf from "./app/screens/Bookshelf";
 import SafeAreaViewAndroid from "./app/stylesheets/SafeAreaViewAndroid";
 import Book from "./app/screens/Book";
@@ -11,6 +11,7 @@ import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import { useCallback } from "react";
 import Logs from "./app/screens/Logs";
+import ColorPalette from "./app/stylesheets/ColorPalette";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -101,6 +102,12 @@ export default function App() {
 
   return (
     <SafeAreaView style={SafeAreaViewAndroid} onLayout={onLayoutRootView}>
+      <StatusBar
+        animated={false}
+        backgroundColor={ColorPalette.bg}
+        barStyle={"dark-content"}
+        hidden={false}
+      />
       <Navbar
         setScreen={setScreen}
         screen={screen}
