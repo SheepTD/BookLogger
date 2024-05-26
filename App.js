@@ -12,6 +12,34 @@ import * as Font from "expo-font";
 import { useCallback } from "react";
 import Logs from "./app/screens/Logs";
 import ColorPalette from "./app/stylesheets/ColorPalette";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://support.google.com/firebase/answer/7015592
+const firebaseConfig = {
+  apiKey: "AIzaSyCjSmwhrfYv77nDBCOC_0lspuksXUsw14g",
+  authDomain: "booklogger-a678e.firebaseapp.com",
+  projectId: "booklogger-a678e",
+  storageBucket: "booklogger-a678e.appspot.com",
+  messagingSenderId: "729587926492",
+  appId: "1:729587926492:web:caa4d7124c0ca1e6293b19",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+const testFunc = async () => {
+  const querySnapshot = await getDocs(collection(db, "users"));
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data()}`);
+  });
+};
+testFunc();
 
 SplashScreen.preventAutoHideAsync();
 
